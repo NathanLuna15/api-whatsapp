@@ -30,17 +30,20 @@ const dadosCadaUsuario = function(num){
     let wpp = {}
 
     whatsapp["whats-users"].forEach(function(item){
-        if(numero == item.number)
-        wpp = {
-            nome: item.account,
-            foto: item["profile-image"],
-            contact: item.contacts,
-            .forEach(function(){
-
+        if(numero == item.number){
+            item.contacts.forEach(function(desc){
+                wpp = {
+                    nome: desc.name,
+                    foto: desc.image,
+                    description: desc.description
+                }
             })
-        }
+        }  
     })
+        return wpp
 }
+
+console.log(dadosCadaUsuario("11987876567"));
 
 
 
