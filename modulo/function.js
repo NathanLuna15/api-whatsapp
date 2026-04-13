@@ -119,5 +119,11 @@ const pesquisarPalavra = function(num, nomeContato, palavra) {
 
 
 
-console.log(pesquisarPalavra("11987876567", "Ana Maria", "a"));
-
+module.exports = {
+    listar, 
+    listarPerfil,
+    dadosCadaUsuario,
+    conversa,
+    buscarConversa,
+    pesquisarPalavra
+ }
