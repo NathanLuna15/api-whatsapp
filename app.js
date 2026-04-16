@@ -13,11 +13,11 @@ app.get("/v1/whatsapp/listar", function(request, response){
 
 
 app.get('/v1/whatsapp/listarPerfil/:num', function(request, response){
-    let numero = request .params.uf
+    let numero = request.params.num
     let zap = whatsapp.listarPerfil(numero)
     if(zap){
-        response.json(zap)
         response.status(200)
+        response.json(zap)
     }else{
         response.status(404)
         response.json({"mensage": "nenhum dado foi encomtrado."})
@@ -25,7 +25,7 @@ app.get('/v1/whatsapp/listarPerfil/:num', function(request, response){
 })
 
 app.get('/v1/whatsapp/dadosCadaUsuario/:num', function(request, response){
-    let numero = request. params.uf
+    let numero = request. params.num
     let zap = whatsapp.dadosCadaUsuario(numero)
     if(zap){
         response.json(zap)
@@ -38,7 +38,7 @@ app.get('/v1/whatsapp/dadosCadaUsuario/:num', function(request, response){
 
 
 app.get('/v1/whatsapp/conversa/:num', function(request, response){
-    let numero = request. params.uf
+    let numero = request. params.num
     let zap = whatsapp.conversa(numero)
     if(zap){
         response.json(zap)
