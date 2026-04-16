@@ -1,8 +1,19 @@
-const express = require('./modulo/node_modules/express')
-const func    = require('./modulo/function.js')
+//Import das dependências para criar a API
+const express = require('express')
+const cors = require('cors')
 
-const app  = express()
+//Criando um objeto do express para criar a API
+const app = express()
 
+//Configurações no cors da API
+const corsOptions = {
+    origin: ['*'],
+    methods: 'GET',
+    allowedHeaders: ['Content-type', 'Authorization'],
+}
+
+//Aplica as configurações do CORS no app (EXPRESS)
+app.use(cors(corsOptions))
 const whatsapp = require("./modulo/function.js")
 
 app.get("/v1/whatsapp/listar", function(request, response){
